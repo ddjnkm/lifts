@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "id": "r_mu9vjkc40opr",
+    "name": "Chest & Arms",
+    "exercises": [
+      "Bench press",
+      "Barbell row",
+      "Tricep push down",
+      "Bicep curl",
+      "Lateral raise",
+      "Lunge dumbbell"
+    ]
+  }
+]
