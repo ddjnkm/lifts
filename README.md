@@ -17,8 +17,10 @@ the page, so you can look at your history on any device. Saving needs a token.
 
 ## Setup
 
-1. **Turn on Pages.** Settings → Pages → Source: *GitHub Actions*. The workflow
-   in `.github/workflows/pages.yml` deploys on every push to `main`.
+1. **Turn on Pages.** Settings → Pages → Source: *GitHub Actions*. This has to
+   be done by hand once: the workflow's token is not allowed to create the
+   Pages site. After that, `.github/workflows/pages.yml` deploys on every push
+   to `main`.
 2. **Create a token.** Go to
    [Settings → Developer settings → Fine-grained tokens](https://github.com/settings/personal-access-tokens/new)
    and create one that is:
