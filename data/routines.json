@@ -22,5 +22,17 @@
       "Bicep curl dumbbell",
       "Standing calf raise"
     ]
+  },
+  {
+    "id": "r_mub4na7rlttt",
+    "name": "Legs focus",
+    "exercises": [
+      "Squat barbell",
+      "Pull up weighted",
+      "Dip weighted",
+      "Leg extension",
+      "Leg curl",
+      "Lateral raise cable"
+    ]
   }
 ]
