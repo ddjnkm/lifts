@@ -10,5 +10,17 @@
       "Lateral raise",
       "Lunge dumbbell"
     ]
+  },
+  {
+    "id": "r_mub4kjpv9zs2",
+    "name": "Back and shoulders",
+    "exercises": [
+      "Deadlift barbell",
+      "Overhead press barbell",
+      "Lat pulldown",
+      "Chest fly machine",
+      "Bicep curl dumbbell",
+      "Standing calf raise"
+    ]
   }
 ]
