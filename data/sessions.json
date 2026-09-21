@@ -1,1 +1,113 @@
-[]
+[
+  {
+    "id": "s_mubbtjfs163h",
+    "date": "2026-09-20",
+    "routineId": "r_mu9vjkc40opr",
+    "routineName": "Chest & Arms focus",
+    "unit": "lbs",
+    "exercises": [
+      {
+        "name": "Bench press 4x5",
+        "sets": [
+          {
+            "weight": 175,
+            "reps": 5
+          },
+          {
+            "weight": 175,
+            "reps": 5
+          },
+          {
+            "weight": 175,
+            "reps": 5
+          },
+          {
+            "weight": 175,
+            "reps": 5
+          }
+        ]
+      },
+      {
+        "name": "Barbell row 3x5",
+        "sets": [
+          {
+            "weight": 135,
+            "reps": 5
+          },
+          {
+            "weight": 135,
+            "reps": 5
+          },
+          {
+            "weight": 135,
+            "reps": 6
+          }
+        ]
+      },
+      {
+        "name": "Tricep push down 3x10",
+        "sets": [
+          {
+            "weight": 42.5,
+            "reps": 12
+          },
+          {
+            "weight": 42.5,
+            "reps": 12
+          },
+          {
+            "weight": 42.5,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Bicep curl 3x10",
+        "sets": [
+          {
+            "weight": 22.5,
+            "reps": 10
+          },
+          {
+            "weight": 22.5,
+            "reps": 10
+          },
+          {
+            "weight": 22.5,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "name": "Lateral raise 3x10",
+        "sets": [
+          {
+            "weight": 25,
+            "reps": 10
+          },
+          {
+            "weight": 25,
+            "reps": 10
+          },
+          {
+            "weight": 25,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "name": "Lunge dumbbell 2x15",
+        "sets": [
+          {
+            "weight": 30,
+            "reps": 15
+          },
+          {
+            "weight": 30,
+            "reps": 15
+          }
+        ]
+      }
+    ]
+  }
+]
