@@ -68,7 +68,7 @@
       max-width: 100%;
       box-sizing: border-box;
     }
-    textarea { width: 100%; min-height: 8rem; line-height: 1.5; }
+    textarea { width: 100%; min-height: 11rem; line-height: 1.5; }
     label { display: block; margin: 0 0 1rem; }
     label span { display: block; font-size: 0.85rem; opacity: 0.7; margin-bottom: 0.25rem; }
 
@@ -149,6 +149,7 @@
       loadError: "",
       draft: null,
       busy: false,
+      editing: null,
     };
 
     // ---------------------------------------------------------------- helpers
@@ -408,8 +409,22 @@
     }
 
     function renderRoutines() {
-      const cards = state.routines.map((r) =>
-        '<div class="card">' +
+      const cards = state.routines.map((r) => {
+        // The routine being edited becomes a form in place. The exercise list
+        // needs a textarea: a prompt() is single-line and would collapse it.
+        if (state.editing === r.id) {
+          return '<div class="card">' +
+            '<label><span>Name</span>' +
+              '<input id="edit-name" value="' + esc(r.name) + '"></label>' +
+            '<label><span>Exercises, one per line</span>' +
+              '<textarea id="edit-exercises">' + esc(r.exercises.join("\n")) + "</textarea></label>" +
+            '<div class="row" style="margin:0">' +
+              '<button class="primary" data-action="save-routine" data-id="' + esc(r.id) + '">Save</button>' +
+              '<button data-action="cancel-edit">Cancel</button>' +
+            "</div>" +
+          "</div>";
+        }
+        return '<div class="card">' +
           '<div class="card-head"><h3>' + esc(r.name) + "</h3>" +
             "<span>" +
               '<button class="small" data-action="use-routine" data-id="' + esc(r.id) + '">Start</button> ' +
@@ -420,7 +435,8 @@
             "</span></div>" +
           '<ul style="margin:0.5rem 0 0;padding-left:1.1rem">' +
             r.exercises.map((e) => "<li>" + esc(e) + "</li>").join("") + "</ul>" +
-        "</div>").join("");
+        "</div>";
+      }).join("");
 
       content.innerHTML = banner() + "<h2>Routines</h2>" +
         (cards || '<p class="empty">No routines yet.</p>') +
@@ -594,16 +610,23 @@
         const next = state.routines.concat([{ id: uid("r_"), name: name, exercises: exercises }]);
         commit("routines", next, "Add routine: " + name, () => { state.routines = next; });
       } else if (action === "edit-routine") {
-        const routine = state.routines.find((r) => r.id === id);
-        const name = prompt("Routine name", routine.name);
-        if (name === null) return;
-        const list = prompt("Exercises, one per line", routine.exercises.join("\n"));
-        if (list === null) return;
-        const exercises = list.split("\n").map((s) => s.trim()).filter(Boolean);
-        if (!name.trim() || !exercises.length) { alert("A routine needs a name and at least one exercise."); return; }
+        state.editing = id;
+        render();
+      } else if (action === "cancel-edit") {
+        state.editing = null;
+        render();
+      } else if (action === "save-routine") {
+        const name = document.getElementById("edit-name").value.trim();
+        const exercises = document.getElementById("edit-exercises").value
+          .split("\n").map((s) => s.trim()).filter(Boolean);
+        if (!name) { alert("Give the routine a name."); return; }
+        if (!exercises.length) { alert("List at least one exercise."); return; }
         const next = state.routines.map((r) =>
-          r.id === id ? { id: r.id, name: name.trim(), exercises: exercises } : r);
-        commit("routines", next, "Edit routine: " + name.trim(), () => { state.routines = next; });
+          r.id === id ? { id: r.id, name: name, exercises: exercises } : r);
+        commit("routines", next, "Edit routine: " + name, () => {
+          state.routines = next;
+          state.editing = null;
+        });
       } else if (action === "delete-routine") {
         const routine = state.routines.find((r) => r.id === id);
         if (!confirm('Delete the routine "' + routine.name + '"? Logged sessions are kept.')) return;
@@ -657,7 +680,11 @@
     content.addEventListener("input", (e) => {
       if (e.target.closest("table.sets")) captureDraft();
     });
-    window.addEventListener("hashchange", render);
+    window.addEventListener("hashchange", () => {
+      // Leaving the view abandons an open edit rather than keeping it pending.
+      state.editing = null;
+      render();
+    });
 
     loadDraft();
     render();
