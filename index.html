@@ -300,7 +300,10 @@
       } catch (e) { state.draft = null; }
     }
 
-    function newDraft(routineId) {
+    // prefill fills each exercise from the last session it appeared in. Clearing
+    // the form passes false: repopulating from history would put the same
+    // numbers straight back, which reads as the button having done nothing.
+    function newDraft(routineId, prefill) {
       const routine = state.routines.find((r) => r.id === routineId);
       const draft = {
         date: today(),
@@ -310,8 +313,7 @@
       };
       if (routine) {
         for (const name of routine.exercises) {
-          const last = lastSetsFor(name);
-          // Prefill with last time's weights so a repeat session is a few taps.
+          const last = prefill === false ? null : lastSetsFor(name);
           const sets = last
             ? last.sets.map((s) => ({ weight: s.weight, reps: s.reps }))
             : [{ weight: "", reps: "" }];
@@ -597,8 +599,12 @@
       } else if (action === "save-session") {
         saveSession();
       } else if (action === "clear-draft") {
-        if (!confirm("Discard this session?")) return;
-        state.draft = null;
+        if (!confirm("Clear the numbers entered for this session?")) return;
+        // Keep the date and the routine on screen; only the entries go.
+        const date = state.draft ? state.draft.date : today();
+        const routineId = state.draft ? state.draft.routineId : "";
+        state.draft = newDraft(routineId, false);
+        state.draft.date = date;
         saveDraft();
         render();
       } else if (action === "add-routine") {
