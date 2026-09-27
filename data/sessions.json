@@ -109,5 +109,95 @@
         ]
       }
     ]
+  },
+  {
+    "id": "s_muk0l2jg3gll",
+    "date": "2026-09-21",
+    "routineId": null,
+    "routineName": null,
+    "unit": "lbs",
+    "exercises": [
+      {
+        "name": "Squat barbell",
+        "sets": [
+          {
+            "weight": 185,
+            "reps": 8
+          },
+          {
+            "weight": 185,
+            "reps": 8
+          },
+          {
+            "weight": 185,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "name": "Hip abduction",
+        "sets": [
+          {
+            "weight": 60,
+            "reps": 10
+          },
+          {
+            "weight": 60,
+            "reps": 10
+          },
+          {
+            "weight": 60,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "name": "Dumbbell press",
+        "sets": [
+          {
+            "weight": 60,
+            "reps": 8
+          },
+          {
+            "weight": 60,
+            "reps": 8
+          },
+          {
+            "weight": 60,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "name": "Lat pulldown",
+        "sets": [
+          {
+            "weight": 160,
+            "reps": 10
+          },
+          {
+            "weight": 160,
+            "reps": 10
+          },
+          {
+            "weight": 160,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "name": "Cable raises",
+        "sets": [
+          {
+            "weight": 12.5,
+            "reps": 10
+          },
+          {
+            "weight": 12.5,
+            "reps": 10
+          }
+        ]
+      }
+    ]
   }
 ]
