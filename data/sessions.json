@@ -199,5 +199,116 @@
         ]
       }
     ]
+  },
+  {
+    "id": "s_muo4spgwd9xu",
+    "date": "2026-09-30",
+    "routineId": "r_mub4kjpv9zs2",
+    "routineName": "🐮Back and shoulders focus",
+    "unit": "lbs",
+    "exercises": [
+      {
+        "name": "Deadlift barbell 3x5",
+        "sets": [
+          {
+            "weight": 225,
+            "reps": 5
+          },
+          {
+            "weight": 225,
+            "reps": 5
+          },
+          {
+            "weight": 225,
+            "reps": 5
+          }
+        ]
+      },
+      {
+        "name": "Overhead press barbell 3x5",
+        "sets": [
+          {
+            "weight": 95,
+            "reps": 5
+          },
+          {
+            "weight": 95,
+            "reps": 5
+          },
+          {
+            "weight": 95,
+            "reps": 5
+          }
+        ]
+      },
+      {
+        "name": "Lat pulldown 3x10",
+        "sets": [
+          {
+            "weight": 145,
+            "reps": 10
+          },
+          {
+            "weight": 145,
+            "reps": 8
+          },
+          {
+            "weight": 145,
+            "reps": 7
+          }
+        ]
+      },
+      {
+        "name": "Chest fly machine 3x10",
+        "sets": [
+          {
+            "weight": 22.5,
+            "reps": 10
+          },
+          {
+            "weight": 22.5,
+            "reps": 10
+          },
+          {
+            "weight": 22.5,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "name": "Bicep curl dumbbell 3x10",
+        "sets": [
+          {
+            "weight": 22.5,
+            "reps": 10
+          },
+          {
+            "weight": 22.5,
+            "reps": 10
+          },
+          {
+            "weight": 22.5,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "name": "Standing calf raise 3x15",
+        "sets": [
+          {
+            "weight": 290,
+            "reps": 15
+          },
+          {
+            "weight": 290,
+            "reps": 15
+          },
+          {
+            "weight": 290,
+            "reps": 15
+          }
+        ]
+      }
+    ]
   }
 ]
