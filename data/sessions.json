@@ -310,5 +310,116 @@
         ]
       }
     ]
+  },
+  {
+    "id": "s_muv9b45e539a",
+    "date": "2026-09-30",
+    "routineId": "r_mub4na7rlttt",
+    "routineName": "🐮Legs focus",
+    "unit": "lbs",
+    "exercises": [
+      {
+        "name": "Squat barbell 3x5",
+        "sets": [
+          {
+            "weight": 185,
+            "reps": 6
+          },
+          {
+            "weight": 185,
+            "reps": 6
+          },
+          {
+            "weight": 185,
+            "reps": 6
+          }
+        ]
+      },
+      {
+        "name": "Pull up weighted 3x5",
+        "sets": [
+          {
+            "weight": null,
+            "reps": 8
+          },
+          {
+            "weight": null,
+            "reps": 8
+          },
+          {
+            "weight": null,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "name": "Dip weighted 3x5",
+        "sets": [
+          {
+            "weight": null,
+            "reps": 12
+          },
+          {
+            "weight": null,
+            "reps": 12
+          },
+          {
+            "weight": null,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Leg extension 3x15",
+        "sets": [
+          {
+            "weight": 130,
+            "reps": 15
+          },
+          {
+            "weight": 130,
+            "reps": 15
+          },
+          {
+            "weight": 130,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "name": "Leg curl 3x15",
+        "sets": [
+          {
+            "weight": 115,
+            "reps": 15
+          },
+          {
+            "weight": 115,
+            "reps": 15
+          },
+          {
+            "weight": 115,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "name": "Lateral raise cable 3x15",
+        "sets": [
+          {
+            "weight": 12.5,
+            "reps": 10
+          },
+          {
+            "weight": 7.5,
+            "reps": 15
+          },
+          {
+            "weight": 7.5,
+            "reps": 15
+          }
+        ]
+      }
+    ]
   }
 ]
